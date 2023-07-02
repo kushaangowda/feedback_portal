@@ -53,7 +53,7 @@ export default function Tweets() {
       <Stack direction="row" spacing={1} style={{ marginTop: 20 }}>
         {keywords.map((keyword, i) => (
           <Chip
-            key={i}
+            key={keyword}
             label={keyword}
             variant="outlined"
             onDelete={() => {
