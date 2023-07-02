@@ -3,6 +3,7 @@ import Root from "./routes/Root";
 import ErrorPage from "./routes/ErrorPage";
 import Tweets from "./routes/Tweets";
 import Home from "./routes/Home";
+import Reviews from "./routes/Reviews";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/tweets",
         element: <Tweets />,
+      },
+      {
+        path: "/reviews",
+        element: <Reviews />,
       },
     ],
   },

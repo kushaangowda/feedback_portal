@@ -27,6 +27,9 @@ export default function Root() {
               <Link to={`/home`}>Home</Link>
             </li>
             <li>
+              <Link to={`/reviews`}>Reviews</Link>
+            </li>
+            <li>
               <Link to={`/tweets`}>Tweets</Link>
             </li>
             <li>
