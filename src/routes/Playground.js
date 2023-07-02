@@ -111,12 +111,12 @@ export default function Playground() {
         </FormControl>
         <TextField
           id="outlined-multiline-flexible"
-          label="Comment"
+          label={"Comment (" + String(comment.length) + "/250 chars)"}
           multiline
           rows={4}
           value={comment}
           onChange={(e) => {
-            setcomment(e.target.value);
+            setcomment(e.target.value.slice(0, 250));
           }}
           style={{ width: "100%" }}
         />
