@@ -74,7 +74,7 @@ export default function Playground() {
 
   return (
     <div>
-      <h2>Review Insight</h2>
+      <h2>Add Review</h2>
       <Box
         component="form"
         sx={{

@@ -62,6 +62,8 @@ export default function Reviews() {
       const res = await axios.get(BACKEND_URL + "/review/get");
       const reviews = JSON.parse(res.data)["reviews"];
 
+      console.log(reviews);
+
       setrows(
         reviews.map((review, i) => ({
           count: i + 1,

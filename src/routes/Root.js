@@ -30,13 +30,10 @@ export default function Root() {
               <Link to={`/reviews`}>Reviews</Link>
             </li>
             <li>
-              <Link to={`/tweets`}>Tweets</Link>
+              <Link to={`/playground`}>Add Review</Link>
             </li>
             <li>
               <Link to={`/overall`}>Overall Insight</Link>
-            </li>
-            <li>
-              <Link to={`/playground`}>Review Insight</Link>
             </li>
           </ul>
         </nav>
