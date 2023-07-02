@@ -32,14 +32,44 @@ export default function Playground() {
     );
   };
 
+  const clearCells = (e) => {
+    e.preventDefault();
+    settitle("");
+    setname("");
+    setdate("");
+    setrating("");
+    setCategory("");
+    setcomment("");
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await axios.post(BACKEND_URL + "/review", { comment });
+    if (
+      comment === "" ||
+      title === "" ||
+      name === "" ||
+      date === "" ||
+      rating === "" ||
+      category === ""
+    ) {
+      return;
+    }
 
-    setposRes(res["data"][0] || "");
-    setnegRes(res["data"][1] || "");
-    setreply(res["data"][2] || "");
+    const res = await axios.post(BACKEND_URL + "/review/add", {
+      comment,
+      title,
+      name,
+      date,
+      rating,
+      category,
+    });
+
+    const data = JSON.parse(res.data);
+
+    setposRes(data["data"]["posRes"] || "");
+    setnegRes(data["data"]["negRes"] || "");
+    setreply(data["data"]["reply"] || "");
   };
 
   return (
@@ -120,8 +150,11 @@ export default function Playground() {
           }}
           style={{ width: "100%" }}
         />
-        <Button variant="contained" onClick={fillCells}>
+        <Button variant="outlined" onClick={fillCells}>
           Autofill
+        </Button>
+        <Button variant="outlined" onClick={clearCells}>
+          Clear
         </Button>
         <Button variant="contained" onClick={handleSubmit}>
           Submit

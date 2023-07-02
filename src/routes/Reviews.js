@@ -11,19 +11,8 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
-import reviews from "../data/reviews.json";
-
-const rows = reviews
-  .filter((review) => review["Comments"].length < 400)
-  .map((review, i) => ({
-    count: i + 1,
-    title: review["Review Title"],
-    customer: review["Customer name"],
-    rating: review["Rating"],
-    date: review["Date"],
-    category: review["Category"],
-    comment: review["Comments"],
-  }));
+import axios from "axios";
+import { BACKEND_URL } from "../Constants";
 
 function Row({ row }) {
   const [open, setOpen] = React.useState(false);
@@ -49,7 +38,14 @@ function Row({ row }) {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
-              <p>Review: {row.comment}</p>
+              <h4>Positives</h4>
+              <p style={{ marginTop: -10 }}>{row.posRes}</p>
+              <h4>Negatives</h4>
+              <p style={{ marginTop: -10 }}>{row.negRes}</p>
+              <h4>Reply To Customer</h4>
+              <p style={{ marginTop: -10 }}>{row.reply}</p>
+              <h4>Original Review</h4>
+              <p style={{ marginTop: -10 }}>{row.comment}</p>
             </Box>
           </Collapse>
         </TableCell>
@@ -59,6 +55,31 @@ function Row({ row }) {
 }
 
 export default function Reviews() {
+  const [rows, setrows] = React.useState([]);
+
+  React.useEffect(() => {
+    async function getReviews() {
+      const res = await axios.get(BACKEND_URL + "/review/get");
+      const reviews = JSON.parse(res.data)["reviews"];
+
+      setrows(
+        reviews.map((review, i) => ({
+          count: i + 1,
+          title: review["title"],
+          customer: review["name"],
+          rating: review["rating"],
+          date: review["date"],
+          category: review["category"],
+          comment: review["comment"],
+          posRes: review["posRes"],
+          negRes: review["negRes"],
+          reply: review["reply"],
+        }))
+      );
+    }
+    getReviews();
+  }, []);
+
   return (
     <div className="Reviews">
       <h2>Reviews</h2>
