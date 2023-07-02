@@ -27,13 +27,13 @@ export default function Root() {
               <Link to={`/home`}>Home</Link>
             </li>
             <li>
+              <Link to={`/overall`}>Overall Insight</Link>
+            </li>
+            <li>
               <Link to={`/reviews`}>Reviews</Link>
             </li>
             <li>
               <Link to={`/playground`}>Add Review</Link>
-            </li>
-            <li>
-              <Link to={`/overall`}>Overall Insight</Link>
             </li>
           </ul>
         </nav>

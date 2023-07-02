@@ -26,7 +26,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function ReviewsOverall() {
-  const [avgr, setAvgr] = useState(5);
+  const [avgr, setAvgr] = useState(0);
   const [vals, setVals] = useState(["40%", "20%", "10%", "10%", "20%"]);
 
   useEffect(() => {
@@ -98,126 +98,132 @@ export default function ReviewsOverall() {
           <Button size="small">Learn More</Button>
         </CardActions>
       </Card>
-      <div
-        style={{
-          marginLeft: "2rem",
-          border: "1px solid rgba(0,0,0,0.1)",
-          width: "calc(100% - 300px - 2rem)",
-          borderRadius: 5,
-          padding: "1rem",
-        }}
-      >
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2}>
-            <Grid item xs={4}>
-              <Item>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    width: "min-content",
-                  }}
-                >
-                  <Rating name="read-only" value={avgr} readOnly />
-                  <h3 style={{ fontSize: 40, margin: 0 }}>{avgr}/5</h3>
-                  <p style={{ margin: 0 }}>Average Rating</p>
-                </div>
-              </Item>
-            </Grid>
-            <Grid item xs={8}>
-              <Item>
-                <div style={{ width: "100%" }}>
-                  <h2>Rating Distribution</h2>
+      {avgr > 0 && (
+        <div
+          style={{
+            marginLeft: "2rem",
+            border: "1px solid rgba(0,0,0,0.1)",
+            width: "calc(100% - 300px - 2rem)",
+            borderRadius: 5,
+            padding: "1rem",
+          }}
+        >
+          <Box sx={{ flexGrow: 1 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={4}>
+                <Item>
                   <div
-                    style={{ width: "100%", border: "1px solid rgba(0,0,0,0.6)", display: "flex" }}
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      width: "min-content",
+                    }}
                   >
+                    <Rating name="read-only" value={avgr} readOnly />
+                    <h3 style={{ fontSize: 40, margin: 0 }}>{avgr}/5</h3>
+                    <p style={{ margin: 0 }}>Average Rating</p>
+                  </div>
+                </Item>
+              </Grid>
+              <Grid item xs={8}>
+                <Item>
+                  <div style={{ width: "100%" }}>
+                    <h2>Rating Distribution</h2>
                     <div
                       style={{
-                        border: "1px solid white",
-                        background: "#00a749",
-                        width: vals[0],
-                        height: "20px",
-                        color: "#fff",
+                        width: "100%",
+                        border: "1px solid rgba(0,0,0,0.6)",
+                        display: "flex",
                       }}
                     >
-                      {vals[0]}
-                    </div>
-                    <div
-                      style={{
-                        border: "1px solid white",
-                        background: "#5ba700",
-                        width: vals[1],
-                        height: "20px",
-                        color: "#fff",
-                      }}
-                    >
-                      {vals[1]}
-                    </div>
-                    <div
-                      style={{
-                        border: "1px solid white",
-                        background: "#e2b400",
-                        width: vals[2],
-                        height: "20px",
-                        color: "#fff",
-                      }}
-                    >
-                      {vals[2]}
-                    </div>
-                    <div
-                      style={{
-                        border: "1px solid white",
-                        background: "#C13C37",
-                        width: vals[3],
-                        height: "20px",
-                        color: "#fff",
-                      }}
-                    >
-                      {vals[3]}
-                    </div>
-                    <div
-                      style={{
-                        border: "1px solid white",
-                        background: "#6A2135",
-                        width: vals[4],
-                        height: "20px",
-                        color: "#fff",
-                      }}
-                    >
-                      {vals[4]}
+                      <div
+                        style={{
+                          border: "1px solid white",
+                          background: "#00a749",
+                          width: vals[0],
+                          height: "20px",
+                          color: "#fff",
+                        }}
+                      >
+                        {vals[0]}
+                      </div>
+                      <div
+                        style={{
+                          border: "1px solid white",
+                          background: "#5ba700",
+                          width: vals[1],
+                          height: "20px",
+                          color: "#fff",
+                        }}
+                      >
+                        {vals[1]}
+                      </div>
+                      <div
+                        style={{
+                          border: "1px solid white",
+                          background: "#e2b400",
+                          width: vals[2],
+                          height: "20px",
+                          color: "#fff",
+                        }}
+                      >
+                        {vals[2]}
+                      </div>
+                      <div
+                        style={{
+                          border: "1px solid white",
+                          background: "#C13C37",
+                          width: vals[3],
+                          height: "20px",
+                          color: "#fff",
+                        }}
+                      >
+                        {vals[3]}
+                      </div>
+                      <div
+                        style={{
+                          border: "1px solid white",
+                          background: "#6A2135",
+                          width: vals[4],
+                          height: "20px",
+                          color: "#fff",
+                        }}
+                      >
+                        {vals[4]}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Item>
+                </Item>
+              </Grid>
+              <Grid item xs={6}>
+                <Item>
+                  <div>
+                    <h2>Overall Positive Responses</h2>
+                    <ul style={{ textAlign: "left" }}>
+                      {posRes.map((res, i) => (
+                        <li key={i}>{res}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </Item>
+              </Grid>
+              <Grid item xs={6}>
+                <Item>
+                  <div>
+                    <h2>Overall Negative Responses</h2>
+                    <ul style={{ textAlign: "left" }}>
+                      {negRes.map((res, i) => (
+                        <li key={i}>{res}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </Item>
+              </Grid>
             </Grid>
-            <Grid item xs={6}>
-              <Item>
-                <div>
-                  <h2>Overall Positive Responses</h2>
-                  <ul style={{ textAlign: "left" }}>
-                    {posRes.map((res, i) => (
-                      <li key={i}>{res}</li>
-                    ))}
-                  </ul>
-                </div>
-              </Item>
-            </Grid>
-            <Grid item xs={6}>
-              <Item>
-                <div>
-                  <h2>Overall Negative Responses</h2>
-                  <ul style={{ textAlign: "left" }}>
-                    {negRes.map((res, i) => (
-                      <li key={i}>{res}</li>
-                    ))}
-                  </ul>
-                </div>
-              </Item>
-            </Grid>
-          </Grid>
-        </Box>
-      </div>
+          </Box>
+        </div>
+      )}
     </div>
   );
 }
