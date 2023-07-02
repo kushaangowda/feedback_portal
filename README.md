@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Customer Feedback Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Customer Feedback Portal!!!
 
-## Available Scripts
+This platform serves as a testing ground for the APIs we have developed, aimed at simplifying the analysis of customer feedback.
 
-In the project directory, you can run:
+Try it [here]("https://master--feedback-portal.netlify.app").
 
-### `npm start`
+You can find the backend repository [here]("https://github.com/kushaangowda/feedback_portal_backend").
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Prompt
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Build an API endpoint that integrates an LLM (either GPT or an open-source model from Hugging Face). We’re looking for exciting solutions to real-world problems. (Track 2)
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Our API leverages the DaVinci model, developed by openAI, to address customer issues encountered while analyzing feedback for a specific product. This model, known for its lightweight design, plays a crucial role in generating a concise summary that encompasses both positive and negative responses. By condensing the feedback into a summary, we can easily grasp the overall sentiment and identify key points without having to go through lengthy reviews.
+2. Additionally, our API goes beyond generating a summary by providing appropriate replies to customers based on their feedback. This feature ensures that customers receive timely and personalized responses, fostering a sense of engagement and satisfaction.
+3. Moreover, by considering all the received reviews, our API compiles a comprehensive set of positive and negative responses, including the average product rating. This compilation helps customers in making informed decisions as they can quickly assess the overall sentiment and gauge the general satisfaction level of other users. It also saves time by providing a consolidated view of feedback, eliminating the need to individually analyze numerous reviews.
+4. In summary, these features collectively enhance the customer experience by simplifying the analysis of feedback, empowering customers with a clear overview, and facilitating prompt and tailored responses. Ultimately, this automated approach helps in effectively resolving customer issues and improving overall satisfaction.
 
-### `npm run build`
+## Playground Components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Overall Insight: Creates a comprehensive perspective by consolidating the entirety of the customer review database
+2. Reviews: Compilation of reviews, encompassing their respective positive and negative feedback, accompanied by appropriate customer replies.
+3. Add Review: A module designed for incorporating fresh reviews
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. FrontEnd: ReactJS
+2. Backend: Flask, OpenAI API
+3. Database: MongoDB
 
-### `npm run eject`
+## References
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Reviews dataset from Kaggle: [https://www.kaggle.com/datasets/parve05/customer-review-dataset?resource=download]("https://www.kaggle.com/datasets/parve05/customer-review-dataset?resource=download")
+2. Open AI API: [https://openai.com/blog/openai-api]("https://openai.com/blog/openai-api")
