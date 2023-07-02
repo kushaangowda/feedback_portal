@@ -10,7 +10,7 @@ import Rating from "@mui/material/Rating";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import { PieChart } from "react-minimal-pie-chart";
+// import { PieChart } from "react-minimal-pie-chart";
 import { styled } from "@mui/material/styles";
 import axios from "axios";
 import { BACKEND_URL } from "../Constants";
@@ -54,7 +54,7 @@ export default function ReviewsOverall() {
     getReviews();
   }, []);
 
-  const [posRes, setposRes] = useState([
+  const [posRes] = useState([
     "Notch display",
     "Dual camera",
     "Face unlock",
@@ -66,7 +66,7 @@ export default function ReviewsOverall() {
     "Good battery life",
     "Positive feedback and loyalty from customers",
   ]);
-  const [negRes, setnegRes] = useState([
+  const [negRes] = useState([
     "Not full screen, No front flash",
     "Notch, Priced at Rs. 10,999, 3GB RAM variant",
     "Very small size",
