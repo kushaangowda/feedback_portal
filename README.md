@@ -4,9 +4,9 @@ Welcome to Customer Feedback Portal!!!
 
 This platform serves as a testing ground for the APIs we have developed, aimed at simplifying the analysis of customer feedback.
 
-Try it [here]("https://master--feedback-portal.netlify.app").
+Try it [here](https://master--feedback-portal.netlify.app).
 
-You can find the backend repository [here]("https://github.com/kushaangowda/feedback_portal_backend").
+You can find the backend repository [here](https://github.com/kushaangowda/feedback_portal_backend).
 
 ## Prompt
 
@@ -33,5 +33,5 @@ Build an API endpoint that integrates an LLM (either GPT or an open-source model
 
 ## References
 
-1. Reviews dataset from Kaggle: [https://www.kaggle.com/datasets/parve05/customer-review-dataset?resource=download]("https://www.kaggle.com/datasets/parve05/customer-review-dataset?resource=download")
-2. Open AI API: [https://openai.com/blog/openai-api]("https://openai.com/blog/openai-api")
+1. Reviews dataset from Kaggle: [https://www.kaggle.com/datasets/parve05/customer-review-dataset?resource=download](https://www.kaggle.com/datasets/parve05/customer-review-dataset?resource=download)
+2. Open AI API: [https://openai.com/blog/openai-api](https://openai.com/blog/openai-api)
