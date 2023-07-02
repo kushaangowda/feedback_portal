@@ -16,12 +16,11 @@ export default function Tweets() {
     console.log("User pressed: ", event.key);
 
     if (event.key === "Enter") {
-      // 👇️ your logic here
-      if (currKeyword !== "") {
+      if (currKeyword !== "" && !keywords.includes(currKeyword)) {
         setkeywords([...keywords, currKeyword]);
         setcurrKeyword("");
-        event.preventDefault();
       }
+      event.preventDefault();
     }
   };
 
@@ -41,16 +40,12 @@ export default function Tweets() {
           label="Keywords"
           variant="outlined"
           helperText="After typing the keyword, click ENTER"
-          onSubmit={(e) => {
-            e.preventDefault();
-            return false;
-          }}
           onKeyDown={handleKeyDown}
           onChange={(event) => setcurrKeyword(event.target.value)}
           value={currKeyword}
         />
       </Box>
-      <Stack direction="row" spacing={1} style={{ marginTop: 20 }}>
+      <Stack direction="row" spacing={1} style={{ marginTop: 10 }}>
         {keywords.map((keyword, i) => (
           <Chip
             key={i}

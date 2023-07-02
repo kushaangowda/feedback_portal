@@ -4,7 +4,7 @@ export default function Root() {
   return (
     <>
       <div id="sidebar">
-        <h1>React Router Contacts</h1>
+        <h1>Customer Feedback Portal</h1>
         <div>
           <form id="search-form" role="search">
             <input
@@ -33,7 +33,10 @@ export default function Root() {
               <Link to={`/tweets`}>Tweets</Link>
             </li>
             <li>
-              <Link to={`/logout`}>Logout</Link>
+              <Link to={`/overall`}>Overall Insight</Link>
+            </li>
+            <li>
+              <Link to={`/playground`}>Review Insight</Link>
             </li>
           </ul>
         </nav>

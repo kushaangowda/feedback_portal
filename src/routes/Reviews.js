@@ -13,15 +13,17 @@ import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import reviews from "../data/reviews.json";
 
-const rows = reviews.map((review, i) => ({
-  count: i + 1,
-  title: review["Review Title"],
-  customer: review["Customer name"],
-  rating: review["Rating"],
-  date: review["Date"],
-  category: review["Category"],
-  comment: review["Comments"],
-}));
+const rows = reviews
+  .filter((review) => review["Comments"].length < 400)
+  .map((review, i) => ({
+    count: i + 1,
+    title: review["Review Title"],
+    customer: review["Customer name"],
+    rating: review["Rating"],
+    date: review["Date"],
+    category: review["Category"],
+    comment: review["Comments"],
+  }));
 
 function Row({ row }) {
   const [open, setOpen] = React.useState(false);
@@ -47,7 +49,7 @@ function Row({ row }) {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
-              <p>{row.comment}</p>
+              <p>Review: {row.comment}</p>
             </Box>
           </Collapse>
         </TableCell>
