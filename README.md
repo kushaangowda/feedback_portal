@@ -10,7 +10,7 @@ You can find the backend repository [here](https://github.com/kushaangowda/feedb
 
 ## Prompt
 
-Build an API endpoint that integrates an LLM (either GPT or an open-source model from Hugging Face). We’re looking for exciting solutions to real-world problems. (Track 2)
+Build an API endpoint that integrates an LLM (either GPT or an open-source model from Hugging Face). We’re looking for exciting solutions to real-world problems. (Track 2 of Mercor Hackathon)
 
 ## Features
 
