@@ -42,6 +42,15 @@ export default function Root() {
             <li>
               <Link to={`/playground`}>Add Review</Link>
             </li>
+            <li>
+              <a
+                href="https://github.com/kushaangowda/feedback_portal"
+                rel="noreferrer"
+                target="_blank"
+              >
+                GitHub Repo
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
