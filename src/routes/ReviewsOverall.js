@@ -36,7 +36,7 @@ export default function ReviewsOverall() {
 
       console.log(reviews);
 
-      let ratings = reviews.map((b) => Number(b["rating"]));
+      let ratings = reviews.map((b) => Number(b["rating"])).filter((val) => val <= 5 && val >= 0);
       const sum = ratings.reduce((a, b) => a + b, 0);
       setAvgr(Math.round((sum * 10) / ratings.length || 0) / 10);
 
@@ -49,7 +49,14 @@ export default function ReviewsOverall() {
         ratingsCount[ratings[i] - 1] += 100 / ratings.length;
       }
 
-      setVals(ratingsCount.map((r) => String(Math.round(r)) + "%").reverse());
+      console.log(ratingsCount.slice(0, 5));
+
+      setVals(
+        ratingsCount
+          .slice(0, 5)
+          .map((r) => String(Math.round(r)) + "%")
+          .reverse()
+      );
     }
     getReviews();
   }, []);

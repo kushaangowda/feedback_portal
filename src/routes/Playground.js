@@ -51,7 +51,9 @@ export default function Playground() {
       name === "" ||
       date === "" ||
       rating === "" ||
-      category === ""
+      category === "" ||
+      rating < 0 ||
+      rating > 5
     ) {
       return;
     }
